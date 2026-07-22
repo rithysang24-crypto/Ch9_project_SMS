@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Student Management System</h1></header>
+    <div class="container">
+        <div class="card">
+            <h2>Add New Student</h2>
+            <h3>Student Name</h3>
+            <div class="Input_group">
+                <p>
+                    <input type="text" id="studentname" required placeholder=" ">
+                    <label for="studentname">Enter Name</label>
+                </p>
+            </div>
+            <h3>Student ID</h3>
+            <div class="Input_group">
+                <p>
+                    <input type="number" id="studentid" required placeholder=" ">
+                    <label for="studentid">Student ID</label>
+                </p>
+            </div>
+            <h3>Gender</h3>
+            <div class="Input_group">
+                <select id="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <h3>Course</h3>
+            <div class="Input_group">
+                <select id="course">
+                    <option value="">Select Course</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JS</option>
+                </select>
+            </div>
+            <h3>Score</h3>
+            <div class="Input_group">
+                <p>
+                    <input type="number" id="score" required placeholder=" ">
+                    <label for="score">Student Score</label>
+                </p>
+            </div>
+            <button class="neon-btn" onclick="addstudent()">Add Student</button>
+            <button class="neon-btn" onclick="clearform()">Clear</button>
+        </div>   
+    </div>
+<div class="container">
+    <div class="card">
+        <label>Total Student: <span id="total">0</span></label>
+    </div>
+</div>
+<div class="table_container">
+    <div class="card_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Course</th>
+                    <th>Description</th>
+                    <th>Score</th>
+                    <th>Grade</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="studenttable"></tbody>
+        </table>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
