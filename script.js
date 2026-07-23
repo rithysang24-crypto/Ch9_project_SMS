@@ -88,3 +88,28 @@ function clearform(){
     document.getElementById("course").value="";
     document.getElementById("score").value="";
 }
+function searchstudent() {
+    const searchid = document.getElementById("searchbox").value.trim();
+    const resultArea = document.getElementById("searchresult");
+    if (searchid === "") {
+        resultArea.innerHTML = "<p>Please enter a Student ID.</p>";
+        return;
+    }
+    const student = students.find(student => student.stu_id === searchId);
+    if (!student) {
+        resultArea.innerHTML = "<p>No student found.</p>";
+        return;
+    }
+    resultArea.innerHTML = `
+        <div class="search-result">
+            <h3>Student Found</h3>
+            <p><strong>ID:</strong> ${student.stu_id}</p>
+            <p><strong>Name:</strong> ${student.stu_name}</p>
+            <p><strong>Gender:</strong> ${student.stu_gender}</p>
+            <p><strong>Course:</strong> ${get_course_descriotion(student.stu_course)}</p>
+            <p><strong>Score:</strong> ${student.stu_score}</p>
+            <p><strong>Grade:</strong> ${calculate_grade(student.stu_score)}</p>
+            <p><strong>Status:</strong> ${get_status(student.stu_score)}</p>
+        </div>
+    `;
+}
