@@ -50,11 +50,11 @@ function get_status(stu_score){
 function get_course_descriotion(stu_course){
     switch(stu_course){
         case "html":
-            return "HTML";
+            return "HyperText Markup Langluage";
         case "css":
-            return "CSS";
+            return "Cascading Style Sheet";
         case "js":
-            return "JS";
+            return "Java Script";
         default:
             return "UNknown";
 
@@ -89,9 +89,9 @@ function clearform(){
     document.getElementById("score").value="";
 }
 function searchstudent() {
-    const searchid = document.getElementById("searchbox").value.trim();
+    const searchId = document.getElementById("searchbox").value.trim();
     const resultArea = document.getElementById("searchresult");
-    if (searchid === "") {
+    if (searchId === "") {
         resultArea.innerHTML = "<p>Please enter a Student ID.</p>";
         return;
     }
